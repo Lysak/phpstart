@@ -22,7 +22,7 @@ Description: A two-column fixed-width template suitable for small websites.
 <div id="wrapper">
   <div id="header">
     <div id="logo">
-      <h1><a href="#">Culinary</a></h1>
+      <h1><a href="/news/">Culinary</a></h1>
       <h2><span>Template By Free CSS Templates</span></h2>
     </div>
     <!-- end div#logo -->
@@ -30,7 +30,7 @@ Description: A two-column fixed-width template suitable for small websites.
   <!-- end div#header -->
 <div id="menu">
     <ul>
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="/news/">Home</a></li>
       <li><a href="#">Products</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
@@ -41,21 +41,19 @@ Description: A two-column fixed-width template suitable for small websites.
     <div id="page-bgtop">
       <div id="content">
 
-        <?php /** @var $newsList */
-        foreach ($newsList as $newsItem):?>
+
         <div class="post">
-          <h2 class="title"><a href="/news/<?php echo $newsItem['id'];?>"><?php echo $newsItem['title'];?></a></h2>
+            <h2 class="title"><a href="/news/<?php /** @var $newsItem */
+              echo $newsItem['id'];?>"><?php echo $newsItem['title'];?></a></h2>
           <p class="byline">Posted by <?php echo $newsItem['author_name'], ' at ', $newsItem['date'];?></p>
           <div class="entry">
             <img src="<?php echo $newsItem['preview'];?>" alt=""/>
-            <p><?php echo $newsItem['short_content'];?></p>
+            <p><?php echo $newsItem['content'];?></p>
           </div>
           <div class="meta">
-            <p class="links"><a href="/news/<?php echo $newsItem['id'];?>" class="comments">Read more</a></p>
+            <p class="links"><a href="/news/" class="comments">Back to all news</a></p>
           </div>
         </div>
-        <?php endforeach; ?>
-
       </div>
       <!-- end div#content -->
       <div id="sidebar">

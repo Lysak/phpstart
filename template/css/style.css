@@ -270,6 +270,7 @@ a:hover {
 .post img {
 	float: left;
 	padding: 15px 0px;
+	max-width: 565px;
 }
 
 .post .meta {
