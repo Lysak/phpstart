@@ -5,18 +5,33 @@
  * Date: 21.08.17
  * Time: 9:13
  */
+
+include_once ROOT.'/models/News.php';
+
 class NewsController
 {
 
     public function actionIndex()
     {
-        echo 'Список новостей';
+        $newsList = array();
+        $newsList = News::getNewsList();
+
+        echo '<pre>';
+        print_r($newsList);
+        echo '</pre>';
+
         return true;
     }
 
-    public function actionView()
+    public function actionView($id)
     {
-        echo '<br><br>Просмотр одной новости';
+        if ($id) {
+            $newsItem = News::getNewsItemById($id);
+
+            echo '<pre>';
+            print_r($newsItem);
+            echo '</pre>';
+        }
         return true;
     }
 }
